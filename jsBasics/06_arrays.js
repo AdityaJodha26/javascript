@@ -122,3 +122,20 @@ console.log(typeof ob) ;
 for(let x of ob){
     console.log(x ) ; 
 } 
+const rate = [2323,434,566,452,777] 
+const qual = rate.filter(x=>x>500) ;
+console.log(qual) 
+
+//flattening a nested array without using flat() ;
+const Arr = [2,4,[5,6,[5]],6] ;
+function flattening(arr){
+    let flatarray = [] ;
+    for(let x of arr){
+        if(Array.isArray(x)){
+          flatarray = flatarray.concat(flattening(x)) ;
+        }else{
+            flatarray.push(x) ;
+            
+        }
+    }return flatarray ; 
+}console.log(flattening(Arr))
