@@ -7,6 +7,8 @@ const arr = [23,45,53,5,32,23,45] ;
 const set = new Set(arr) ;
 console.log(set)
 
+// size property  set.size ; 
+
 /* 2) create a set using new Set()
 and then add values using add() method  ; 
 */
