@@ -16,12 +16,13 @@ const para = document.getElementById("firstpara") ;
 console.log(para.textContent) ; 
 
 //2) by TagName 
-const clickButton = document.getElementsByTagName("button")
+const clickButton = document.getElementById("first")
 console.log("selected") ; 
 
-//3) by ClassName 
+//3) by ClassName - returns all the elements with that class name so it returns an html collection 
+
 const head = document.getElementsByClassName("main")
-console.log(head) 
+console.log(head[0].innerHTML) 
 
 //4) by CSS selector - a) querySelector() method
 //querySelector(.class || #id || tagname || div p (nested selector)) 
@@ -31,7 +32,7 @@ console.log("yeah")
 
 // b) querySelectorAll - selects all the matching elements 
 const btnn =document.querySelectorAll("button")
-btnn.forEach((x)=>{console.log(hello)});
+btnn.forEach((x)=>{console.log("hello")});
 
 //********************** */
 //Changing HTML 
@@ -39,4 +40,29 @@ btnn.forEach((x)=>{console.log(hello)});
 // 1) innerHTML - is used to get or change the html content 
 console.log(para.innerHTML) 
 console.log(para.innerHTML="why not you")
-console.log(head.innerHTML="hata sawan ki ghata batti bujha tv chala gaadi bhaga toliya sukha jawaani luta ")
+console.log(head[0].innerHTML) ;
+head[0].innerHTML="hata sawan ki ghata batti bujha tv chala gaadi bhaga toliya sukha bhootni bhaga "
+console.log(head.innerHTML)
+//2) attribute property is used to change the attributes of any element ;
+
+
+
+//*********************** */
+// Changing Css 
+//dom allows js to change the style of the html element 
+// 1)style.property = new style 
+para.style.color = "#5c9911" ; 
+clickButton.onclick=()=> {
+    clickButton.style.backgroundColor= "red" ;
+};
+console.log("execute");
+
+// javascript form Validation ;
+const inputName = document.getElementById("name") ; 
+const sb = document.getElementById("submitbutton") ; 
+sb.onclick=()=>{
+    const name = inputName.value ; 
+    if(name.trim()===""){
+        alert("badmoshi nhi laadle")
+    }
+};
